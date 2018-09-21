@@ -12,7 +12,7 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
 {
     @IBOutlet weak var productsTable: UITableView!
     var displayProducts: [Product] = []
- 
+    var selectedTag: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,8 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationItem.title = selectedTag
         
         productsTable.reloadData() // Reload data
     }
@@ -47,5 +49,9 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         productCell.titleLabel.text = displayProducts[indexPath.row].title
         
         return productCell;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 105.0
     }
 }

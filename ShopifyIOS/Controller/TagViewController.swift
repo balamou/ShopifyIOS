@@ -25,13 +25,19 @@ class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        guard let selectedIndex = self.tagTable.indexPath(for: sender as! UITableViewCell)
+        else {
+            print("Error: No tag was selected")
+            return // EXIT
+        }
+        
         if segue.identifier == "ShowProductSegue"
         {
             if let destinationVC = segue.destination as? ProductsViewController {
-                destinationVC.displayProducts = Product.filterProducts(products: net.products, by: "Awesome")
+                destinationVC.displayProducts = Product.filterProducts(products: net.products, by: net.tags[selectedIndex.row])
+                destinationVC.selectedTag = net.tags[selectedIndex.row]
             }
         }
     }
@@ -50,6 +56,10 @@ class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tagCell.tagLabel.text = net.tags[indexPath.row]
         
         return tagCell;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64.0
     }
     
 }
