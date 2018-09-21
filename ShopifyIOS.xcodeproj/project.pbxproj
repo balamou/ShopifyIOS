@@ -16,6 +16,7 @@
 		ED3BD2102154926E00D6E360 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3BD20F2154926E00D6E360 /* ProductsViewController.swift */; };
 		EDC9C80621554D9A00351ECB /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9C80521554D9A00351ECB /* ProductTableViewCell.swift */; };
 		EDCAC5B2215557FE009C0DB1 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCAC5B1215557FE009C0DB1 /* Kingfisher.framework */; };
+		EDCAC5B421559832009C0DB1 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCAC5B321559832009C0DB1 /* extensions.swift */; };
 		EDD730BC2154569F00C52B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD730BB2154569F00C52B04 /* AppDelegate.swift */; };
 		EDD730BE2154569F00C52B04 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD730BD2154569F00C52B04 /* TagViewController.swift */; };
 		EDD730C12154569F00C52B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD730BF2154569F00C52B04 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		ED3BD20F2154926E00D6E360 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		EDC9C80521554D9A00351ECB /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		EDCAC5B1215557FE009C0DB1 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCAC5B321559832009C0DB1 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		EDD730B82154569F00C52B04 /* ShopifyIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopifyIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD730BB2154569F00C52B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD730BD2154569F00C52B04 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				EDD730C7215456A200C52B04 /* Info.plist */,
+				EDCAC5B321559832009C0DB1 /* extensions.swift */,
 				ED0BC876215466A4000426D7 /* Model */,
 				ED0BC87A215466C6000426D7 /* View */,
 				ED0BC87B215466CB000426D7 /* Controller */,
@@ -437,6 +440,7 @@
 				ED3BD2102154926E00D6E360 /* ProductsViewController.swift in Sources */,
 				EDD730BE2154569F00C52B04 /* TagViewController.swift in Sources */,
 				EDC9C80621554D9A00351ECB /* ProductTableViewCell.swift in Sources */,
+				EDCAC5B421559832009C0DB1 /* extensions.swift in Sources */,
 				ED3BD20E21548EE800D6E360 /* TagTableViewCell.swift in Sources */,
 				ED3BD20C21546F6B00D6E360 /* product.swift in Sources */,
 				ED3BD20A21546C8F00D6E360 /* NetworkDispatcher.swift in Sources */,

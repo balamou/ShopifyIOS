@@ -19,7 +19,6 @@ import Alamofire
 class NetworkDispatcher {
     
     var tags : [String] = []
-    var tagsCounted : [String: Int] = [:]
     var products: [Product] = []
     
     /*
@@ -82,28 +81,19 @@ class NetworkDispatcher {
                 }
             }
             
-            let tmp = Product(title: title, totalInventory: totalQuant, vendor: vendor, imageURL: src)
+            let productToAdd = Product(title: title, totalInventory: totalQuant, vendor: vendor, imageURL: src)
+            
             let sepTags = tags.components(separatedBy: ", ") // separates the tags into an array
-            setTags = setTags.union(Set(sepTags));
-            tmp.tags = sepTags;
+            productToAdd.tags = sepTags // add separated tag to the product array
+            setTags = setTags.union(Set(sepTags)) // union those tags with previously fetched tags
             
-            // Get tags and count them
-            for i in sepTags {
-                if let val = tagsCounted[i] {
-                    tagsCounted[i] = val + 1;
-                }
-                else
-                {
-                    tagsCounted[i] = 1;
-                }
-            }
+            self.products += [productToAdd] // add product to final array
             
-            self.products += [tmp]
-            print(tmp)
+            print(productToAdd)
         }
-        self.tags = Array(setTags)
-        print(setTags.sorted())
+        
+        self.tags = Array(setTags).sorted()
+        print(tags)
         print()
-        print(tagsCounted)
     }
 }

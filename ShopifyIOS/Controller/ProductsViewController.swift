@@ -50,6 +50,7 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         productCell.vendorLabel.text = displayProducts[indexPath.row].vendor
         productCell.totalInvLabel.text = String(displayProducts[indexPath.row].totalInventory)
         productCell.tagsLabel.text = displayProducts[indexPath.row].getFormattedTags()
+        productCell.productImage.loadCache(link: displayProducts[indexPath.row].imageURL, contentMode: UIViewContentMode.scaleAspectFit)
         
         return productCell;
     }

@@ -41,15 +41,12 @@ class Product: CustomStringConvertible {
     
     /*
      This static method filters out all products in a list that match a particular tag
+     and orders them by inventory quantity
      */
     static func filterProducts(products: [Product], by tag: String) -> [Product] {
-        var finalProd: [Product] = []
-        
-        for prod in products {
-            if prod.tags.contains(tag) {
-                finalProd += [prod]
-            }
-        }
+       
+        var finalProd: [Product] = products.filter{$0.tags.contains(tag)} // filter out products by tag
+        finalProd = finalProd.sorted(by: { $0.totalInventory > $1.totalInventory }) // sort products from highest total inventory to lowest
         
         return finalProd
     }
