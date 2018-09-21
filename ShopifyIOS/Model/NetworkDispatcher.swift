@@ -101,7 +101,9 @@ class NetworkDispatcher {
             self.products += [tmp]
             print(tmp)
         }
+        self.tags = Array(setTags)
         print(setTags.sorted())
+        print()
         print(tagsCounted)
     }
 }

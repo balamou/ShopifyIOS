@@ -12,6 +12,7 @@
 		ED0BC8722154645D000426D7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0BC8712154645D000426D7 /* Alamofire.framework */; };
 		ED3BD20A21546C8F00D6E360 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3BD20921546C8F00D6E360 /* NetworkDispatcher.swift */; };
 		ED3BD20C21546F6B00D6E360 /* product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3BD20B21546F6B00D6E360 /* product.swift */; };
+		ED3BD20E21548EE800D6E360 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3BD20D21548EE800D6E360 /* TagTableViewCell.swift */; };
 		EDD730BC2154569F00C52B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD730BB2154569F00C52B04 /* AppDelegate.swift */; };
 		EDD730BE2154569F00C52B04 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD730BD2154569F00C52B04 /* TagViewController.swift */; };
 		EDD730C12154569F00C52B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD730BF2154569F00C52B04 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		ED0BC8732154645D000426D7 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3BD20921546C8F00D6E360 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		ED3BD20B21546F6B00D6E360 /* product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = product.swift; sourceTree = "<group>"; };
+		ED3BD20D21548EE800D6E360 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		EDD730B82154569F00C52B04 /* ShopifyIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopifyIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD730BB2154569F00C52B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD730BD2154569F00C52B04 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
@@ -142,16 +144,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		ED0BC877215466AB000426D7 /* Networking Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Networking Model";
-			sourceTree = "<group>";
-		};
 		ED0BC87A215466C6000426D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ED3BD20D21548EE800D6E360 /* TagTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,7 +189,6 @@
 				ED0BC876215466A4000426D7 /* Model */,
 				ED0BC87A215466C6000426D7 /* View */,
 				ED0BC87B215466CB000426D7 /* Controller */,
-				ED0BC877215466AB000426D7 /* Networking Model */,
 				ED0BC87521546655000426D7 /* Supporting files */,
 			);
 			path = ShopifyIOS;
@@ -428,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDD730BE2154569F00C52B04 /* TagViewController.swift in Sources */,
+				ED3BD20E21548EE800D6E360 /* TagTableViewCell.swift in Sources */,
 				ED3BD20C21546F6B00D6E360 /* product.swift in Sources */,
 				ED3BD20A21546C8F00D6E360 /* NetworkDispatcher.swift in Sources */,
 				EDD730BC2154569F00C52B04 /* AppDelegate.swift in Sources */,

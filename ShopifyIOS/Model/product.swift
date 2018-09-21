@@ -19,9 +19,8 @@ class Product: CustomStringConvertible {
     var imageURL: String
     var tags: [String] = [] // tags of the product (Ex. Aerodynamic, Clock, Concrete)
     
-    // To use as Print
+    // Returns a string representing the Product Object
     var description: String {
-        //var tmp = "-----\nTitle: \(self.title)\nTotal Inv: \(totalInventory)\nVendor: \(vendor)\nImageSrc: \(imageURL)\nTags: \(tags)----"
         var tmp = "--------\n"
         tmp+="Title: \(self.title)\n"
         tmp+="Total Inv: \(totalInventory)\n"
