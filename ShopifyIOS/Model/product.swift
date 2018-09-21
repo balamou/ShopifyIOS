@@ -38,4 +38,19 @@ class Product: CustomStringConvertible {
         self.vendor = vendor
         self.imageURL = imageURL
     }
+    
+    /*
+     This static method filters out all products in a list that match a particular tag
+     */
+    static func filterProducts(products: [Product], by tag: String) -> [Product] {
+        var finalProd: [Product] = []
+        
+        for prod in products {
+            if prod.tags.contains(tag) {
+                finalProd += [prod]
+            }
+        }
+        
+        return finalProd
+    }
 }

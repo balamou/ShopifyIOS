@@ -13,23 +13,31 @@ class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tagTable: UITableView!
     var net = NetworkDispatcher()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         net.requestProducts{ _ in
             self.tagTable.reloadData() // Reload data once request has been parsed
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowProductSegue"
+        {
+            if let destinationVC = segue.destination as? ProductsViewController {
+                destinationVC.displayProducts = Product.filterProducts(products: net.products, by: "Awesome")
+            }
+        }
     }
-
     
     //---------------------------------------------------------------------------------------------
-    // TableView delegate
+    // MARK: - TableView delegate
     //---------------------------------------------------------------------------------------------
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
