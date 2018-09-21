@@ -10,11 +10,17 @@ import Foundation
 
 
 class Product {
-    var name: String
+    // basic info
+    var title: String // Product tile (Ex. Aerodynamic Cotton Keyboard)
     var totalInventory: Int // total available inventory
     
-    init(name: String, totalInventory: Int) {
-        self.name = name
+    // more info
+    var vendor: String
+    var tags: [String] = [] // tags of the product (Ex. Aerodynamic, Clock, Concrete)
+    
+    init(title: String, totalInventory: Int, vendor: String) {
+        self.title = title
         self.totalInventory = totalInventory
+        self.vendor = vendor
     }
 }
