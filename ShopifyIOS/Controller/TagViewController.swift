@@ -13,6 +13,11 @@ class TagViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        let d = NetworkDispatcher()
+        d.requestProducts{ _ in }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +25,6 @@ class TagViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
 }
 

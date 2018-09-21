@@ -9,18 +9,34 @@
 import Foundation
 
 
-class Product {
+class Product: CustomStringConvertible {
     // basic info
     var title: String // Product tile (Ex. Aerodynamic Cotton Keyboard)
     var totalInventory: Int // total available inventory
     
     // more info
     var vendor: String
+    var imageURL: String
     var tags: [String] = [] // tags of the product (Ex. Aerodynamic, Clock, Concrete)
     
-    init(title: String, totalInventory: Int, vendor: String) {
+    // To use as Print
+    var description: String {
+        //var tmp = "-----\nTitle: \(self.title)\nTotal Inv: \(totalInventory)\nVendor: \(vendor)\nImageSrc: \(imageURL)\nTags: \(tags)----"
+        var tmp = "--------\n"
+        tmp+="Title: \(self.title)\n"
+        tmp+="Total Inv: \(totalInventory)\n"
+        tmp+="Vendor: \(vendor)\n"
+        tmp+="ImageSrc: \(imageURL)\n"
+        tmp+="Tags: \(tags)\n"
+        tmp+="--------"
+        
+        return tmp
+    }
+    
+    init(title: String, totalInventory: Int, vendor: String, imageURL: String) {
         self.title = title
         self.totalInventory = totalInventory
         self.vendor = vendor
+        self.imageURL = imageURL
     }
 }
