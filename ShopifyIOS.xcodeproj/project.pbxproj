@@ -10,9 +10,10 @@
 		33C33E1891B69E20CC8F515A /* Pods_ShopifyIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7B112E5D20343D26AFFBFB /* Pods_ShopifyIOS.framework */; };
 		B614ACD02C07483EA16C31B9 /* Pods_ShopifyIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6671DD9E4501D765D16B58 /* Pods_ShopifyIOSUITests.framework */; };
 		ED0BC8722154645D000426D7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0BC8712154645D000426D7 /* Alamofire.framework */; };
-		ED0BC8742154645D000426D7 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0BC8732154645D000426D7 /* Kingfisher.framework */; };
+		ED3BD20A21546C8F00D6E360 /* tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3BD20921546C8F00D6E360 /* tags.swift */; };
+		ED3BD20C21546F6B00D6E360 /* product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3BD20B21546F6B00D6E360 /* product.swift */; };
 		EDD730BC2154569F00C52B04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD730BB2154569F00C52B04 /* AppDelegate.swift */; };
-		EDD730BE2154569F00C52B04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD730BD2154569F00C52B04 /* ViewController.swift */; };
+		EDD730BE2154569F00C52B04 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD730BD2154569F00C52B04 /* TagViewController.swift */; };
 		EDD730C12154569F00C52B04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD730BF2154569F00C52B04 /* Main.storyboard */; };
 		EDD730C3215456A200C52B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD730C2215456A200C52B04 /* Assets.xcassets */; };
 		EDD730C6215456A200C52B04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD730C4215456A200C52B04 /* LaunchScreen.storyboard */; };
@@ -49,9 +50,11 @@
 		E3AEE3B91501AC4E95AB6E1F /* Pods-ShopifyIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyIOS/Pods-ShopifyIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0BC8712154645D000426D7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0BC8732154645D000426D7 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3BD20921546C8F00D6E360 /* tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tags.swift; sourceTree = "<group>"; };
+		ED3BD20B21546F6B00D6E360 /* product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = product.swift; sourceTree = "<group>"; };
 		EDD730B82154569F00C52B04 /* ShopifyIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopifyIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD730BB2154569F00C52B04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDD730BD2154569F00C52B04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDD730BD2154569F00C52B04 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		EDD730C02154569F00C52B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDD730C2215456A200C52B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDD730C5215456A200C52B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,7 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED0BC8722154645D000426D7 /* Alamofire.framework in Frameworks */,
-				ED0BC8742154645D000426D7 /* Kingfisher.framework in Frameworks */,
 				33C33E1891B69E20CC8F515A /* Pods_ShopifyIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +133,37 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
+		ED0BC876215466A4000426D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED3BD20921546C8F00D6E360 /* tags.swift */,
+				ED3BD20B21546F6B00D6E360 /* product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED0BC877215466AB000426D7 /* Networking Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Networking Model";
+			sourceTree = "<group>";
+		};
+		ED0BC87A215466C6000426D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED0BC87B215466CB000426D7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EDD730BD2154569F00C52B04 /* TagViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		EDD730AF2154569F00C52B04 = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				EDD730C7215456A200C52B04 /* Info.plist */,
-				EDD730BD2154569F00C52B04 /* ViewController.swift */,
+				ED0BC876215466A4000426D7 /* Model */,
+				ED0BC87A215466C6000426D7 /* View */,
+				ED0BC87B215466CB000426D7 /* Controller */,
+				ED0BC877215466AB000426D7 /* Networking Model */,
 				ED0BC87521546655000426D7 /* Supporting files */,
 			);
 			path = ShopifyIOS;
@@ -338,12 +374,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ShopifyIOS/Pods-ShopifyIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -393,7 +427,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD730BE2154569F00C52B04 /* ViewController.swift in Sources */,
+				EDD730BE2154569F00C52B04 /* TagViewController.swift in Sources */,
+				ED3BD20C21546F6B00D6E360 /* product.swift in Sources */,
+				ED3BD20A21546C8F00D6E360 /* tags.swift in Sources */,
 				EDD730BC2154569F00C52B04 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
