@@ -53,4 +53,14 @@ class Product: CustomStringConvertible {
         
         return finalProd
     }
+    
+    /*
+     This method converts the array of tags into a different format:
+     ["Awesome", "Pants", "Silk"] -> "#awesome #pants #silk"
+     */
+    func getFormattedTags() -> String {
+        let lowercase = tags.map{"#" + $0.lowercased()} // make all tags lowercase and add a hashtag infont
+        
+        return lowercase.joined(separator: " ") // join array by spaces
+    }
 }

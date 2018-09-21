@@ -47,6 +47,9 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         let productCell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as! ProductTableViewCell
         
         productCell.titleLabel.text = displayProducts[indexPath.row].title
+        productCell.vendorLabel.text = displayProducts[indexPath.row].vendor
+        productCell.totalInvLabel.text = String(displayProducts[indexPath.row].totalInventory)
+        productCell.tagsLabel.text = displayProducts[indexPath.row].getFormattedTags()
         
         return productCell;
     }
