@@ -19,12 +19,15 @@ import Alamofire
 class NetworkDispatcher {
     
     var tags : [String] = []
+    var tagsCounted : [String: Int] = [:]
     var products: [Product] = []
     
     /*
      This functions makes a request to Shopify's rest API.
      The result JSON is parsed for tags only and a string array
      is produced and further processed in the completion handler.
+     
+     completion:
      */
     func requestProducts(completion: @escaping ([String])  -> () )
     {
@@ -84,10 +87,21 @@ class NetworkDispatcher {
             setTags = setTags.union(Set(sepTags));
             tmp.tags = sepTags;
             
+            // Get tags and count them
+            for i in sepTags {
+                if let val = tagsCounted[i] {
+                    tagsCounted[i] = val + 1;
+                }
+                else
+                {
+                    tagsCounted[i] = 1;
+                }
+            }
             
             self.products += [tmp]
             print(tmp)
         }
         print(setTags.sorted())
+        print(tagsCounted)
     }
 }
