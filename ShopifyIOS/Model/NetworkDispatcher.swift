@@ -19,7 +19,7 @@ import Alamofire
 class NetworkDispatcher {
     
     var tags : [String] = []
-    var products: [Product] = []
+    var products : [Product] = []
     
     /*
      This functions makes a request to Shopify's rest API.
@@ -28,14 +28,14 @@ class NetworkDispatcher {
      
      completion:
      */
-    func requestProducts(completion: @escaping ([String])  -> () )
+    func requestProducts(completion: @escaping ([String], [Product])  -> () )
     {
         Alamofire.request("https://shopicruit.myshopify.com/admin/products.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6").responseJSON { response in
             
             if let json = response.result.value
             {
-                self.materializeProducts(json)
-                completion(self.tags)
+                self.materializeProducts(json) // convert the json into a Product array
+                completion(self.tags, self.products)
             }
         }
     }
@@ -81,10 +81,11 @@ class NetworkDispatcher {
                 }
             }
             
+            // Add all parsed data into a Product class and then add that object into an Array
             let productToAdd = Product(title: title, totalInventory: totalQuant, vendor: vendor, imageURL: src)
             
             let sepTags = tags.components(separatedBy: ", ") // separates the tags into an array
-            productToAdd.tags = sepTags // add separated tag to the product array
+            productToAdd.tags = sepTags // add separated tags to the product
             setTags = setTags.union(Set(sepTags)) // union those tags with previously fetched tags
             
             self.products += [productToAdd] // add product to final array
@@ -94,6 +95,5 @@ class NetworkDispatcher {
         
         self.tags = Array(setTags).sorted()
         print(tags)
-        print()
     }
 }

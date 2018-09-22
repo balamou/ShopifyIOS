@@ -11,13 +11,19 @@ import UIKit
 class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet weak var tagTable: UITableView!
-    var net = NetworkDispatcher()
+
+    var tags: [String] = []
+    var products: [Product] = []
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        net.requestProducts{ _ in
+        let net = NetworkDispatcher()
+        net.requestProducts{ tags, products in
+            self.tags = tags
+            self.products = products
+            
             self.tagTable.reloadData() // Reload data once request has been parsed
         }
     }
@@ -27,17 +33,17 @@ class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        guard let selectedIndex = self.tagTable.indexPath(for: sender as! UITableViewCell)
-        else {
-            print("Error: No tag was selected")
-            return // EXIT
-        }
-        
         if segue.identifier == "ShowProductSegue"
         {
+            guard let selectedIndex = self.tagTable.indexPath(for: sender as! UITableViewCell)
+                else {
+                    print("Error: No tag was selected")
+                    return // EXIT
+            }
+            
             if let destinationVC = segue.destination as? ProductsViewController {
-                destinationVC.displayProducts = Product.filterProducts(products: net.products, by: net.tags[selectedIndex.row])
-                destinationVC.selectedTag = net.tags[selectedIndex.row]
+                destinationVC.displayProducts = Product.filterProducts(products: products, by: tags[selectedIndex.row])
+                destinationVC.selectedTag = tags[selectedIndex.row]
             }
         }
     }
@@ -47,13 +53,13 @@ class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     //---------------------------------------------------------------------------------------------
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return net.tags.count;
+        return tags.count; // retunr the number of tags
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tagCell = tableView.dequeueReusableCell(withIdentifier: "TagCell") as! TagTableViewCell
         
-        tagCell.tagLabel.text = net.tags[indexPath.row]
+        tagCell.tagLabel.text = tags[indexPath.row]
         
         return tagCell;
     }
