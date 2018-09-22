@@ -22,6 +22,7 @@ class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         addNavBar() // change the style of the nav bar
         
         let net = NetworkDispatcher()
+        // Make a request to the Shopify's JSON API
         net.requestProducts{ tags, products in
             self.tags = tags
             self.products = products
