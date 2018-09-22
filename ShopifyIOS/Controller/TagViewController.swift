@@ -19,6 +19,8 @@ class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     {
         super.viewDidLoad()
         
+        addNavBar() // change the style of the nav bar
+        
         let net = NetworkDispatcher()
         net.requestProducts{ tags, products in
             self.tags = tags
@@ -26,6 +28,25 @@ class TagViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
             self.tagTable.reloadData() // Reload data once request has been parsed
         }
+    }
+    
+    func addNavBar() {
+        let navController = navigationController!
+        //navController.navigationBar.barTintColor = #colorLiteral(red: 0.4117647059, green: 0.5490196078, blue: 0.2823529412, alpha: 1)
+        
+        let image:UIImage = #imageLiteral(resourceName: "shopify")
+        let imageView = UIImageView(image: image)
+        
+        let bannerWidth = navController.navigationBar.frame.size.width
+        let bannerHeight = navController.navigationBar.frame.size.height
+        
+        let bannerX = bannerWidth/2 - image.size.width/2
+        let bannerY = bannerHeight/2 - image.size.height/2
+        
+        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
+        imageView.contentMode = .scaleAspectFit
+        
+        navigationItem.titleView = imageView
     }
 
     // MARK: - Navigation
